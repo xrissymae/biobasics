@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name="fastqc"
-#SBATCH --output=/home/klorilla/logs/"fastqc.%j.%N.out"
+#SBATCH --output=~/logs/"fastqc.%j.%N.out"
 #SBATCH --partition=compute
 #SBATCH --nodes=2
 #SBATCH --ntasks-per-node=24
@@ -10,6 +10,6 @@
 
 module load fastqc/0.11.4
 
-fastqc -o /home/klorilla/fastqc ~/trimmomatic/*P.fq.gz
+fastqc -o ~/fastqc ~/data/*.fastq.gz
 
 
